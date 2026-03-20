@@ -319,10 +319,10 @@ footer{background:var(--navy);padding:40px 48px;}
     </div>
     <div class="connect-right">
       <form class="connect-form" onsubmit="handleSubmit(event)">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="What Are You Working On?">
-        <textarea placeholder="Tell Me More..."></textarea>
+        <input type="text" name="from_name" placeholder="Your Name" required>
+        <input type="email" name="from_email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="What Are You Working On?">
+        <textarea name="message" placeholder="Tell Me More..."></textarea>
         <button type="submit">Send Message</button>
       </form>
     </div>
@@ -337,13 +337,36 @@ footer{background:var(--navy);padding:40px 48px;}
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+emailjs.init('P3pnjHcw190uTdO2s');
+
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button');
-  btn.textContent = 'Message Sent — Thank You.';
-  btn.style.background = '#c8a97e';
-  setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; e.target.reset(); }, 3000);
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  emailjs.sendForm('service_y1vm277', 'template_jvk2wcn', e.target)
+    .then(function() {
+      btn.textContent = 'Message Sent — Thank You.';
+      btn.style.background = '#c8a97e';
+      setTimeout(function() {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    })
+    .catch(function() {
+      btn.textContent = 'Something went wrong — try again.';
+      btn.style.background = '#c0392b';
+      setTimeout(function() {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    });
 }
 </script>
 </body>

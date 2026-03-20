@@ -1,6 +1,6 @@
 # Dayna DeStefano — Personal Website
 
-**Version:** 0.1.0
+**Version:** 0.2.0
 
 A personal website for Dayna DeStefano — business builder, strategist, and operator.
 
@@ -8,13 +8,14 @@ A personal website for Dayna DeStefano — business builder, strategist, and ope
 
 ```
 .
-├── index.html          # Single-file website (all styles inline)
+├── index.html              # Single-file website (all styles inline)
+├── email-template.html     # EmailJS email template (HTML for Gmail notifications)
 ├── brand_assets/
-│   └── logo.svg        # Brand logo
-├── serve.mjs           # Local dev server (localhost:3000)
-├── screenshot.mjs      # Puppeteer screenshot tool for visual QA
-├── CLAUDE.md           # Claude Code instructions and design rules
-├── package.json        # Dependencies (Puppeteer)
+│   └── logo.svg            # Brand logo
+├── serve.mjs               # Local dev server (localhost:3000)
+├── screenshot.mjs          # Puppeteer screenshot tool for visual QA
+├── CLAUDE.md               # Claude Code instructions and design rules
+├── package.json            # Dependencies (Puppeteer)
 └── temporary screenshots/  # Auto-generated screenshots (git-ignored)
 ```
 
@@ -51,9 +52,16 @@ node screenshot.mjs http://localhost:3000 homepage
 # → screenshot-N-homepage.png
 ```
 
+## Contact Form
+
+The contact form at the bottom of the site sends submissions to Gmail via [EmailJS](https://www.emailjs.com/). The email is formatted using a branded HTML template (`email-template.html`).
+
+Form fields: Name, Email, What Are You Working On, and Message.
+
 ## Tech Stack
 
 - Vanilla HTML/CSS (single file, all styles inline)
 - Google Fonts (Roboto)
+- EmailJS (contact form → Gmail)
 - Node.js dev server (zero dependencies)
 - Puppeteer (screenshot QA)

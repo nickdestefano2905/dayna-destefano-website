@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;padding:0;background-color:#f7f4f0;font-family:Arial,Helvetica,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f7f4f0;padding:40px 20px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:2px;overflow:hidden;">
+
+          <!-- Header -->
+          <tr>
+            <td style="background-color:#011638;padding:32px 40px;">
+              <h1 style="margin:0;color:#ffffff;font-size:18px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">New Website Inquiry</h1>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:40px;">
+
+              <!-- From Name -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+                <tr>
+                  <td style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#999999;padding-bottom:6px;">Name</td>
+                </tr>
+                <tr>
+                  <td style="font-size:16px;color:#0a0a0a;padding-bottom:20px;border-bottom:1px solid #e4dfd8;">{{from_name}}</td>
+                </tr>
+              </table>
+
+              <!-- Email -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+                <tr>
+                  <td style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#999999;padding-bottom:6px;">Email</td>
+                </tr>
+                <tr>
+                  <td style="font-size:16px;padding-bottom:20px;border-bottom:1px solid #e4dfd8;">
+                    <a href="mailto:{{from_email}}" style="color:#011638;text-decoration:none;">{{from_email}}</a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Working On -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+                <tr>
+                  <td style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#999999;padding-bottom:6px;">Working On</td>
+                </tr>
+                <tr>
+                  <td style="font-size:16px;color:#0a0a0a;padding-bottom:20px;border-bottom:1px solid #e4dfd8;">{{subject}}</td>
+                </tr>
+              </table>
+
+              <!-- Message -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#999999;padding-bottom:6px;">Message</td>
+                </tr>
+                <tr>
+                  <td style="font-size:16px;color:#0a0a0a;line-height:1.7;">{{message}}</td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color:#f9ebe6;padding:20px 40px;">
+              <p style="margin:0;font-size:11px;color:#999999;letter-spacing:0.04em;">Sent from daynadestefano.com contact form</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
