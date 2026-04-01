@@ -163,6 +163,16 @@ footer{background:var(--navy);padding:40px 48px;}
   .boe-images{grid-template-columns:1fr 1fr;}
   .footer-inner{flex-direction:column;gap:16px;text-align:center;}
 }
+
+/* RESOURCES TEASER */
+.resources-teaser{background:var(--blush);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.resources-teaser-left{display:flex;align-items:center;gap:20px;}
+.resources-teaser-badge{font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);background:var(--navy);padding:5px 12px;}
+.resources-teaser-text{font-size:13px;color:var(--navy);font-weight:400;letter-spacing:0.01em;}
+.resources-teaser-text strong{font-weight:700;}
+.resources-teaser-link{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:8px;white-space:nowrap;transition:opacity 0.2s;}
+.resources-teaser-link:hover{opacity:0.5;}
+@media(max-width:640px){.resources-teaser{flex-direction:column;align-items:flex-start;padding:24px 20px;gap:16px;}}
 </style>
 </head>
 <body>
@@ -283,6 +293,18 @@ footer{background:var(--navy);padding:40px 48px;}
     </div>
   </div>
 </section>
+
+<!-- RESOURCES TEASER -->
+<div class="resources-teaser">
+  <div class="resources-teaser-left">
+    <span class="resources-teaser-badge">Coming Soon</span>
+    <span class="resources-teaser-text"><strong>AI &amp; Energy Resources</strong> — A shop &amp; resource hub for founders, operators, and parents building on their terms.</span>
+  </div>
+  <a href="resources.html" class="resources-teaser-link">
+    Get Early Access
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
 
 <!-- BOE FEATURE -->
 <div class="boe-section">
