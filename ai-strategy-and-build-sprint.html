@@ -46,7 +46,8 @@ h2.section-headline{font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(-
 .hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;}
 h1.hero-headline{font-size:clamp(40px,4.5vw,58px);font-weight:700;line-height:1.08;letter-spacing:-0.02em;color:var(--navy);margin-bottom:20px;}
 h1.hero-headline em{font-style:italic;font-weight:300;}
-.hero-subhead{font-size:17px;font-weight:300;line-height:1.75;color:var(--text);margin-bottom:30px;max-width:520px;}
+.hero-subhead{font-size:17px;font-weight:300;line-height:1.75;color:var(--text);margin-bottom:30px;max-width:560px;}
+.hero-price{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:26px;}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
 .btn-primary{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:var(--navy);color:white;padding:14px 28px;text-decoration:none;transition:opacity 0.2s;display:inline-block;}
 .btn-primary:hover{opacity:0.85;}
@@ -56,9 +57,11 @@ h1.hero-headline em{font-style:italic;font-weight:300;}
 
 /* SPEC LIST */
 .spec{list-style:none;margin-top:28px;padding-top:24px;border-top:1px solid var(--rule);max-width:620px;}
-.spec li{font-size:15px;font-weight:300;color:var(--text);line-height:1.6;padding:5px 0 5px 22px;position:relative;}
-.spec li::before{content:'';position:absolute;left:0;top:13px;width:6px;height:6px;background:var(--navy);}
+.spec li{font-size:15px;font-weight:300;color:var(--text);line-height:1.6;padding:12px 0 12px 22px;position:relative;}
+.spec li::before{content:'';position:absolute;left:0;top:20px;width:6px;height:6px;background:var(--navy);}
 .spec strong{font-weight:500;color:var(--navy);}
+.spec li strong{display:block;}
+.spec-desc{display:block;font-size:14px;font-weight:300;color:var(--muted);line-height:1.7;margin-top:3px;}
 
 /* CARD GRID */
 .cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:40px;}
@@ -76,6 +79,10 @@ h1.hero-headline em{font-style:italic;font-weight:300;}
 .stage-num{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:0.14em;text-transform:uppercase;opacity:0.5;padding-top:4px;}
 .stage h3{font-size:20px;font-weight:700;color:var(--navy);line-height:1.25;letter-spacing:-0.01em;margin-bottom:7px;}
 .stage p{font-size:15px;font-weight:300;line-height:1.8;color:var(--text);max-width:600px;}
+.stage p + p{margin-top:12px;}
+.stage-list{list-style:none;margin:14px 0 14px 0;max-width:600px;}
+.stage-list li{font-size:15px;font-weight:300;color:var(--text);line-height:1.6;padding:4px 0 4px 22px;position:relative;}
+.stage-list li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:6px;background:var(--navy);opacity:0.45;}
 
 /* BLUSH */
 .blush-section{background:var(--navy);padding:76px 48px;}
@@ -83,6 +90,10 @@ h1.hero-headline em{font-style:italic;font-weight:300;}
 .blush-section h2.section-headline{color:#fff;}
 .blush-inner{max-width:1200px;margin:0 auto;}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px;}
+.blush-section .section-intro{color:rgba(255,255,255,0.7);}
+.scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:36px;}
+.scenario h3{font-size:15px;font-weight:700;color:#fff;line-height:1.35;letter-spacing:0.01em;margin-bottom:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.25);}
+.scenario p{font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.75);}
 blockquote{font-size:18px;font-weight:300;font-style:italic;color:#fff;border-left:3px solid rgba(255,255,255,0.35);padding-left:24px;line-height:1.6;}
 blockquote cite{display:block;margin-top:14px;font-size:10px;font-weight:700;font-style:normal;letter-spacing:0.14em;text-transform:uppercase;color:#fff;opacity:0.5;}
 
@@ -121,6 +132,7 @@ footer{background:var(--navy);padding:40px 48px;}
 @media(max-width:900px){
   .cards-grid{grid-template-columns:1fr;}
   .quotes{grid-template-columns:1fr;}
+  .scenarios{grid-template-columns:1fr;gap:28px;}
   .session-grid{grid-template-columns:1fr;gap:32px;}
 }
 @media(max-width:768px){
@@ -153,16 +165,17 @@ footer{background:var(--navy);padding:40px 48px;}
 <section class="hero">
   <p class="hero-eyebrow">Work With Me &middot; 1:1</p>
   <h1 class="hero-headline">The AI Strategy<br>&amp; <em>Build</em> Sprint</h1>
-  <p class="hero-subhead">Six sessions to understand and integrate AI into your business — so you can do more with less, on your terms.</p>
+  <p class="hero-subhead" style="margin-bottom:16px;">Turn the knowledge, decisions, and repeatable work currently living in your head into AI-powered systems your business can actually use.</p>
+  <p class="hero-subhead">Over six private working sessions, we'll identify what's slowing you down, centralize the context behind your business, and build up to three personalized AI systems inside your own accounts &mdash; so your business can move faster without requiring more of you.</p>
+  <p class="hero-price">$4,997 &middot; Six private sessions + implementation review</p>
   <div class="hero-ctas">
     <a href="https://calendar.app.google/7MxPBZzeYbkddVJt5" class="btn-primary">Book A Free Discovery Call</a>
-    <a href="#included" class="btn-secondary">See What's Included</a>
   </div>
-  <p class="undercta">Thirty minutes, no charge. We'll figure out whether this is the right fit before anyone commits to anything.</p>
+  <p class="undercta">You don't need to be technical. You need an established business, a real operational need, and a willingness to build differently.</p>
   <ul class="spec">
-    <li>Your <strong>AI brain</strong>, built and centralized</li>
-    <li>Up to three <strong>personalized</strong> AI-powered systems, live in your accounts</li>
-    <li><strong>Sustainable</strong> operational efficiency underneath the whole thing</li>
+    <li><strong>Your business knowledge, centralized</strong><span class="spec-desc">Your voice, offers, clients, processes, and essential documents organized so AI can work with the real context of your company.</span></li>
+    <li><strong>Up to three high-impact systems, operational</strong><span class="spec-desc">We choose and build the workflows that will remove the most friction, reclaim the most capacity, or reduce the business's dependence on you.</span></li>
+    <li><strong>The confidence to run and expand them</strong><span class="spec-desc">Everything lives in your accounts, is documented for you and your team, and is designed to evolve after our work ends.</span></li>
   </ul>
 </section>
 
@@ -181,38 +194,69 @@ footer{background:var(--navy);padding:40px 48px;}
 <!-- INCLUDED -->
 <section class="section" id="included" style="background:var(--white);border-top:1px solid var(--rule);">
   <p class="section-eyebrow">What's Included</p>
-  <h2 class="section-headline">Six things that exist when we're done<br>&mdash; and keep working after.</h2>
-  <p class="section-intro">Every one of them gets built in your accounts, in your name. When the sprint ends, nothing gets taken back and nothing stops working.</p>
-  <div class="cards-grid">
-    <div class="card">
-      <span class="card-number">01</span>
-      <h3 class="card-title">Your AI Brain</h3>
-      <p class="card-desc">Your business's context, voice, documents, and process — organized so AI answers as someone who knows your company. In Google Drive if you have a team, so it isn't trapped on your laptop.</p>
+  <h2 class="section-headline">What we build together</h2>
+  <p class="section-intro">This isn't a course, a list of generic prompts, or a strategy deck you have to implement alone. It's a private, done-with-you build designed around how your business actually operates.</p>
+  <div class="stages">
+    <div class="stage">
+      <span class="stage-num">01</span>
+      <div>
+        <h3>AI Opportunity &amp; Systems Strategy</h3>
+        <p>We identify where AI can create the most meaningful leverage across your business &mdash; and where it doesn't belong. Together, we select up to three systems based on business value, complexity, and the capacity they can return.</p>
+      </div>
     </div>
-    <div class="card card-alt">
-      <span class="card-number">02</span>
-      <h3 class="card-title">Up To Three Personalized Systems, Live</h3>
-      <p class="card-desc">Your onboarding, your content voice, your daily digest — whatever moves the most weight. Built during our sessions, by you, with my direction. You'll know how to maintain and expand every one of them.</p>
+    <div class="stage">
+      <span class="stage-num">02</span>
+      <div>
+        <h3>Your Business AI Brain</h3>
+        <p>We organize the context AI needs to support your business intelligently: your voice, offers, clients, goals, decisions, processes, and essential documents.</p>
+        <p>Instead of starting from scratch every time, you'll have a centralized foundation that understands how your company works and can support everything we build next.</p>
+      </div>
     </div>
-    <div class="card card-alt">
-      <span class="card-number">03</span>
-      <h3 class="card-title">A Complete Client Hub</h3>
-      <p class="card-desc">Every session's notes, your homework, and step-by-step how-to guides for everything we build. Nothing depends on your memory or mine.</p>
+    <div class="stage">
+      <span class="stage-num">03</span>
+      <div>
+        <h3>Up to Three Personalized AI Systems</h3>
+        <p>I design the architecture and guide the implementation of up to three high-impact systems inside your own accounts.</p>
+        <p>Depending on your business, that could include:</p>
+        <ul class="stage-list">
+          <li>A client onboarding and delivery system</li>
+          <li>A content strategy and creation engine grounded in your voice</li>
+          <li>A meeting-to-decisions-and-actions workflow</li>
+          <li>A proposal or scope-development system</li>
+          <li>A founder or team knowledge assistant</li>
+          <li>A weekly business intelligence digest</li>
+          <li>A customer-research and insight system</li>
+        </ul>
+        <p>We define what constitutes each system before the build begins, so the scope and intended outcome are clear.</p>
+      </div>
     </div>
-    <div class="card">
-      <span class="card-number">04</span>
-      <h3 class="card-title">Your Personal Energy Blueprint</h3>
-      <p class="card-desc">The operating manual you were born with — how you're built to work, decide, and recharge. The systems only work if they're designed around the person running them.</p>
+    <div class="stage">
+      <span class="stage-num">04</span>
+      <div>
+        <h3>Your Client Hub and Implementation Guides</h3>
+        <p>You'll receive a centralized hub containing session notes, decisions, recordings or recaps, and step-by-step instructions for every system we create &mdash; so nothing depends on memory and your team can adopt the work with you.</p>
+      </div>
     </div>
-    <div class="card">
-      <span class="card-number">05</span>
-      <h3 class="card-title">Access Between Sessions</h3>
-      <p class="card-desc">Voice notes Monday through Friday, answered within one business day. When you're building, you shouldn't be stuck waiting.</p>
+    <div class="stage">
+      <span class="stage-num">05</span>
+      <div>
+        <h3>Support Between Sessions</h3>
+        <p>You'll have weekday voice-note access to me throughout the active Sprint, with responses within one business day. Use it to troubleshoot, pressure-test decisions, and keep the implementation moving between sessions.</p>
+      </div>
     </div>
-    <div class="card card-alt">
-      <span class="card-number">06</span>
-      <h3 class="card-title">A Wrap Session</h3>
-      <p class="card-desc">Thirty minutes, open format, once you've lived with everything for a few weeks. Bring me what's working and what's stuck.</p>
+    <div class="stage">
+      <span class="stage-num">06</span>
+      <div>
+        <h3>Personal Energy Blueprint</h3>
+        <p>Your systems need to work for the person actually running the business. Your Personal Energy Blueprint helps us account for how you naturally process information, make decisions, create, lead, and recharge &mdash; so we don't build a technically impressive system you won't want to use.</p>
+      </div>
+    </div>
+    <div class="stage">
+      <span class="stage-num">07</span>
+      <div>
+        <h3>Implementation Review</h3>
+        <p>Thirty days after the final build session, we'll meet for a 30-minute review to evaluate what's being used, resolve what's stuck, and identify the next opportunity for your business.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -257,18 +301,22 @@ footer{background:var(--navy);padding:40px 48px;}
 <!-- TESTIMONIALS -->
 <section class="blush-section">
   <div class="blush-inner">
-    <p class="section-eyebrow">In Their Words</p>
-    <h2 class="section-headline">From people who've built it.</h2>
-    <div class="quotes">
-      <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        <cite>Client One &mdash; Business Type</cite>
-      </blockquote>
-      <blockquote>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.
-        <cite>Client Two &mdash; Business Type</cite>
-      </blockquote>
-      <blockquote>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <cite>Client Three &mdash; Business Type</cite>
-      </blockquote>
+    <p class="section-eyebrow">What This Could Look Like</p>
+    <h2 class="section-headline">What your Sprint could unlock</h2>
+    <p class="section-intro">Every Sprint is customized, but the work might look like:</p>
+    <div class="scenarios">
+      <div class="scenario">
+        <h3>For a consultant or advisor</h3>
+        <p>We centralize her methodology, offers, voice, and client process, then build systems for proposal development, client onboarding, and content creation. She spends less time recreating work and can deliver a more consistent client experience.</p>
+      </div>
+      <div class="scenario">
+        <h3>For an agency or service-business founder</h3>
+        <p>We extract the knowledge her team repeatedly needs from her, build a centralized business assistant, and create systems for meeting follow-up and client reporting. Her team can move without waiting for her to answer every question.</p>
+      </div>
+      <div class="scenario">
+        <h3>For a founder building a personal brand</h3>
+        <p>We capture her ideas, stories, positioning, and voice, then build a system that turns raw thoughts into structured content across channels &mdash; without outsourcing the point of view that makes the work hers.</p>
+      </div>
     </div>
   </div>
 </section>
