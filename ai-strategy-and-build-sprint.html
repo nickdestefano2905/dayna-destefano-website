@@ -72,6 +72,35 @@ h2.section-headline{font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(-
 /* DELIVERABLE + MOCKUP SPLIT */
 .stage-visual{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start;}
 
+/* HERO SPLIT + BUILD STACK */
+.hero-split{display:grid;grid-template-columns:1fr 360px;gap:60px;align-items:start;}
+.build-stack{display:flex;flex-direction:column;gap:12px;margin-top:6px;}
+.build-card{background:var(--white);border:1px solid var(--rule-cool);border-left:3px solid var(--lime);padding:17px 19px;box-shadow:0 16px 34px -26px rgba(1,22,56,0.45);display:flex;flex-direction:column;}
+.build-card:nth-child(2){margin-left:16px;}
+.build-card:nth-child(3){margin-left:32px;}
+.build-n{font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--navy);opacity:0.45;}
+.build-t{font-size:15px;font-weight:700;color:var(--navy);line-height:1.3;margin-top:5px;}
+.build-d{font-size:12.5px;font-weight:300;color:var(--muted);line-height:1.6;margin-top:4px;}
+.build-cap{font-size:11px;font-weight:300;color:var(--muted);line-height:1.6;margin-top:16px;margin-left:32px;}
+
+/* SPEC AS BOXES */
+.spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule-cool);border:1px solid var(--rule-cool);margin-top:44px;}
+.spec-box{background:var(--white);padding:30px;display:flex;flex-direction:column;gap:9px;transition:background 0.2s;}
+.spec-box:nth-child(2),.spec-box:nth-child(3){background:var(--sky);}
+.spec-box-n{display:inline-block;align-self:start;background:var(--lime);font-size:10px;font-weight:700;letter-spacing:0.12em;color:var(--navy);padding:4px 9px;}
+.spec-box-t{font-size:18px;font-weight:700;color:var(--navy);line-height:1.25;letter-spacing:-0.01em;}
+.spec-box-d{font-size:13.5px;font-weight:300;color:var(--text);line-height:1.7;}
+
+/* APPROACH SPLIT + LAYER DIAGRAM */
+.approach-split{display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:start;}
+.layers{display:flex;flex-direction:column;gap:10px;margin-top:6px;}
+.layer{padding:16px 18px;border:1px solid var(--rule-cool);}
+.layer b{display:block;font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.3;}
+.layer i{display:block;font-style:normal;font-size:11.5px;font-weight:300;color:var(--muted);margin-top:3px;line-height:1.55;}
+.layer-ai{background:var(--lime);border-color:transparent;margin:0 26px;}
+.layer-ctx{background:var(--sky);border-color:transparent;margin:0 13px;}
+.layer-arrow{text-align:center;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy);opacity:0.4;}
+
 /* HERO */
 .hero{max-width:1200px;margin:0 auto;padding:72px 48px 64px;}
 .hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;}
@@ -163,8 +192,18 @@ footer{background:var(--navy);padding:40px 48px;}
 .footer-copy a{color:white;}
 
 @media(max-width:1000px){
+  .hero-split{grid-template-columns:1fr;gap:40px;}
+  .build-stack{max-width:420px;}
+  .approach-split{grid-template-columns:1fr;gap:36px;}
+  .layers{max-width:420px;}
   .stage-visual{grid-template-columns:1fr;gap:24px;}
   .stage-visual .mock{max-width:420px;}
+}
+@media(max-width:760px){
+  .spec-grid{grid-template-columns:1fr;}
+  .build-card:nth-child(2),.build-card:nth-child(3){margin-left:0;}
+  .build-cap{margin-left:0;}
+  .layer-ai,.layer-ctx{margin:0;}
 }
 @media(max-width:900px){
   .cards-grid{grid-template-columns:1fr;}
@@ -200,31 +239,63 @@ footer{background:var(--navy);padding:40px 48px;}
 
 <!-- HERO -->
 <section class="hero">
-  <p class="hero-eyebrow">Work With Me &middot; 1:1</p>
-  <h1 class="hero-headline">The AI Strategy<br>&amp; <em>Build</em> <span class="mark">Sprint</span></h1>
-  <p class="hero-subhead">We identify where your business depends too heavily on you, then build and implement the AI-supported workflows that give you capacity back.</p>
-  <p class="hero-price">7 sessions total</p>
-  <div class="hero-ctas">
-    <a href="https://calendar.app.google/7MxPBZzeYbkddVJt5" class="btn-primary">Book A Free Discovery Call</a>
+  <div class="hero-split">
+    <div>
+      <p class="hero-eyebrow">Work With Me &middot; 1:1</p>
+      <h1 class="hero-headline">The AI Strategy<br>&amp; <em>Build</em> <span class="mark">Sprint</span></h1>
+      <p class="hero-subhead">We identify where your business depends too heavily on you, then build and implement the AI-supported workflows that give you capacity back.</p>
+      <p class="hero-price">7 sessions total</p>
+      <div class="hero-ctas">
+        <a href="https://calendar.app.google/7MxPBZzeYbkddVJt5" class="btn-primary">Book A Free Discovery Call</a>
+      </div>
+      <p class="undercta">You don't need to be technical. You need an established business, a real operational need, and a willingness to build differently.</p>
+    </div>
+    <div>
+      <div class="build-stack" aria-hidden="true">
+        <div class="build-card">
+          <span class="build-n">What gets built &middot; 01</span>
+          <span class="build-t">Your Business AI Brain</span>
+          <span class="build-d">Your voice, offers, clients, processes and documents, centralized.</span>
+        </div>
+        <div class="build-card">
+          <span class="build-n">02</span>
+          <span class="build-t">Up to 3 personalized systems</span>
+          <span class="build-d">Built in your accounts, scoped before we start.</span>
+        </div>
+        <div class="build-card">
+          <span class="build-n">03</span>
+          <span class="build-t">Your client hub &amp; guides</span>
+          <span class="build-d">Step-by-step, so your team can run it without you.</span>
+        </div>
+      </div>
+      <p class="build-cap">Everything stays in your accounts.</p>
+    </div>
   </div>
-  <p class="undercta">You don't need to be technical. You need an established business, a real operational need, and a willingness to build differently.</p>
-  <ul class="spec">
-    <li><strong>We identify what's slowing you down</strong><span class="spec-desc">We pinpoint the highest-value opportunities and define the systems we'll build.</span></li>
-    <li><strong>Your business knowledge, centralized</strong><span class="spec-desc">Your voice, offers, clients, processes, and essential documents organized so AI can work with the real context of your company.</span></li>
-    <li><strong>Up to 3 high-impact systems, operational</strong><span class="spec-desc">We choose and build the workflows that will remove the most friction, reclaim the most capacity, or reduce the business's dependence on you.</span></li>
-    <li><strong>The confidence to run and expand them</strong><span class="spec-desc">Everything lives in your accounts, is documented for you and your team, and is designed to evolve after our work ends.</span></li>
-  </ul>
+  <div class="spec-grid">
+    <div class="spec-box"><span class="spec-box-n">01</span><span class="spec-box-t">We identify what's slowing you down</span><span class="spec-box-d">We pinpoint the highest-value opportunities and define the systems we'll build.</span></div>
+    <div class="spec-box"><span class="spec-box-n">02</span><span class="spec-box-t">Your business knowledge, centralized</span><span class="spec-box-d">Your voice, offers, clients, processes, and essential documents organized so AI can work with the real context of your company.</span></div>
+    <div class="spec-box"><span class="spec-box-n">03</span><span class="spec-box-t">Up to 3 high-impact systems, operational</span><span class="spec-box-d">We choose and build the workflows that will remove the most friction, reclaim the most capacity, or reduce the business's dependence on you.</span></div>
+    <div class="spec-box"><span class="spec-box-n">04</span><span class="spec-box-t">The confidence to run and expand them</span><span class="spec-box-d">Everything lives in your accounts, is documented for you and your team, and is designed to evolve after our work ends.</span></div>
+  </div>
 </section>
 
 <!-- WHAT THIS RETURNS -->
 <section class="section" style="border-top:1px solid var(--rule);">
   <p class="section-eyebrow">My Approach</p>
   <h2 class="section-headline">AI only drives a return<br>if it's set up correctly.</h2>
-  <div class="body-copy">
-    <p>AI is an amplifier. Point it at a clear, organized business and it compounds everything — your capacity, your output, your margins. Point it at chaos and you get faster chaos.</p>
-    <p>Out of the box, it doesn't know your clients, your voice, your pricing, or the dozen things you do every week that only live in your head. That's why most people try it, get generic answers back, and quietly decide it isn't for them. It isn't a tooling problem. It's a foundation problem.</p>
-    <p>So we don't start with tools. We start with what you're actually building, get the pieces organized, and then build the AI layer on top.</p>
-    <p>The goal of all of it is capacity. I take a human-centered approach to AI — it runs your back office, not your voice — so your time goes to the work that actually matters, and your life and business both run with more ease.</p>
+  <div class="approach-split">
+    <div class="body-copy" style="margin-top:0;">
+      <p>AI is an amplifier. Point it at a clear, organized business and it compounds everything — your capacity, your output, your margins. Point it at chaos and you get faster chaos.</p>
+      <p>Out of the box, it doesn't know your clients, your voice, your pricing, or the dozen things you do every week that only live in your head. That's why most people try it, get generic answers back, and quietly decide it isn't for them. It isn't a tooling problem. It's a foundation problem.</p>
+      <p>So we don't start with tools. We start with what you're actually building, get the pieces organized, and then build the AI layer on top.</p>
+      <p>The goal of all of it is capacity. I take a human-centered approach to AI — it runs your back office, not your voice — so your time goes to the work that actually matters, and your life and business both run with more ease.</p>
+    </div>
+    <div class="layers" aria-hidden="true">
+      <div class="layer layer-ai"><b>The AI layer</b><i>Built last, on top of everything below it</i></div>
+      <div class="layer-arrow">&uarr; built in this order</div>
+      <div class="layer layer-ctx"><b>Your organized context</b><i>Voice, offers, pricing, process &mdash; out of your head</i></div>
+      <div class="layer layer-base"><b>What you're actually building</b><i>The business itself. We start here.</i></div>
+    </div>
   </div>
 </section>
 
