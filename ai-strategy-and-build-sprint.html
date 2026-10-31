@@ -12,9 +12,13 @@
   --white: #ffffff;
   --off-white: #f7f4f0;
   --blush: #f9ebe6;
+  --sky: #eef3fc;
+  --pink: #ffebf1;
+  --lime: #dbfeaf;
   --text: #0a0a0a;
   --muted: #666666;
   --rule: #e4dfd8;
+  --rule-cool: #dde6f4;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;scroll-padding-top:84px;}
@@ -40,6 +44,33 @@ h2.section-headline{font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(-
 .body-copy{max-width:640px;margin-top:22px;}
 .body-copy p{font-size:17px;font-weight:300;line-height:1.8;color:var(--text);margin-bottom:16px;}
 .body-copy p:last-child{margin-bottom:0;}
+
+/* HIGHLIGHT MARK */
+.mark{background:var(--lime);box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0.04em 0.18em;}
+.mark-pink{background:var(--pink);}
+.mark-sky{background:var(--sky);}
+
+/* MOCKUP PANELS */
+.mock{background:var(--white);border:1px solid var(--rule-cool);box-shadow:0 18px 40px -24px rgba(1,22,56,0.35),0 2px 6px -2px rgba(1,22,56,0.08);}
+.mock-bar{display:flex;align-items:center;gap:6px;padding:11px 14px;border-bottom:1px solid var(--rule-cool);background:var(--sky);}
+.mock-dot{width:8px;height:8px;border-radius:50%;background:rgba(1,22,56,0.22);}
+.mock-label{margin-left:8px;font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy);opacity:0.65;}
+.mock-body{padding:20px 22px;}
+.mock-row{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--rule);}
+.mock-row:last-child{border-bottom:0;}
+.mock-chip{flex-shrink:0;width:7px;height:7px;margin-top:6px;background:var(--lime);}
+.mock-k{font-size:12.5px;font-weight:500;color:var(--navy);line-height:1.5;}
+.mock-v{font-size:12px;font-weight:300;color:var(--muted);line-height:1.6;display:block;margin-top:1px;}
+.mock-flow{display:flex;flex-direction:column;gap:0;}
+.mock-step{display:flex;align-items:center;gap:11px;padding:10px 0;}
+.mock-num{flex-shrink:0;width:19px;height:19px;background:var(--navy);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.mock-step-t{font-size:12.5px;font-weight:400;color:var(--text);line-height:1.45;}
+.mock-arrow{width:1px;height:12px;background:var(--rule-cool);margin-left:9px;}
+.mock-out{margin-top:12px;padding:11px 13px;background:var(--lime);font-size:12px;font-weight:500;color:var(--navy);line-height:1.5;}
+.mock-cap{font-size:11px;font-weight:300;color:var(--muted);line-height:1.6;margin-top:12px;font-style:italic;}
+
+/* DELIVERABLE + MOCKUP SPLIT */
+.stage-visual{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start;}
 
 /* HERO */
 .hero{max-width:1200px;margin:0 auto;padding:72px 48px 64px;}
@@ -77,6 +108,7 @@ h1.hero-headline em{font-style:italic;font-weight:300;}
 .stages{margin-top:40px;border-top:1px solid var(--rule);}
 .stage{display:grid;grid-template-columns:120px 1fr;gap:32px;padding:26px 0;border-bottom:1px solid var(--rule);}
 .stage-num{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:0.14em;text-transform:uppercase;opacity:0.5;padding-top:4px;}
+#included .stage-num{opacity:1;background:var(--lime);display:inline-block;padding:4px 9px;align-self:start;letter-spacing:0.1em;}
 .stage h3{font-size:20px;font-weight:700;color:var(--navy);line-height:1.25;letter-spacing:-0.01em;margin-bottom:7px;}
 .stage p{font-size:15px;font-weight:300;line-height:1.8;color:var(--text);max-width:600px;}
 .stage p + p{margin-top:12px;}
@@ -130,6 +162,10 @@ footer{background:var(--navy);padding:40px 48px;}
 .footer-copy{font-size:11px;font-weight:400;color:white;opacity:0.35;letter-spacing:0.06em;}
 .footer-copy a{color:white;}
 
+@media(max-width:1000px){
+  .stage-visual{grid-template-columns:1fr;gap:24px;}
+  .stage-visual .mock{max-width:420px;}
+}
 @media(max-width:900px){
   .cards-grid{grid-template-columns:1fr;}
   .quotes{grid-template-columns:1fr;}
@@ -165,7 +201,7 @@ footer{background:var(--navy);padding:40px 48px;}
 <!-- HERO -->
 <section class="hero">
   <p class="hero-eyebrow">Work With Me &middot; 1:1</p>
-  <h1 class="hero-headline">The AI Strategy<br>&amp; <em>Build</em> Sprint</h1>
+  <h1 class="hero-headline">The AI Strategy<br>&amp; <em>Build</em> <span class="mark">Sprint</span></h1>
   <p class="hero-subhead">We identify where your business depends too heavily on you, then build and implement the AI-supported workflows that give you capacity back.</p>
   <p class="hero-price">7 sessions total</p>
   <div class="hero-ctas">
@@ -207,10 +243,21 @@ footer{background:var(--navy);padding:40px 48px;}
     </div>
     <div class="stage">
       <span class="stage-num">02</span>
-      <div>
-        <h3>Your Business AI Brain</h3>
-        <p>We organize the context AI needs to support your business intelligently: your voice, offers, clients, goals, decisions, processes, and essential documents.</p>
-        <p>Instead of starting from scratch every time, you'll have a centralized foundation that understands how your company works and can support everything we build next.</p>
+      <div class="stage-visual">
+        <div>
+          <h3>Your Business AI Brain</h3>
+          <p>We organize the context AI needs to support your business intelligently: your voice, offers, clients, goals, decisions, processes, and essential documents.</p>
+          <p>Instead of starting from scratch every time, you'll have a centralized foundation that understands how your company works and can support everything we build next.</p>
+        </div>
+        <div class="mock" aria-hidden="true">
+          <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-label">Your AI Brain</span></div>
+          <div class="mock-body">
+            <div class="mock-row"><span class="mock-chip"></span><span class="mock-k">Voice &amp; tone<span class="mock-v">How you write and speak</span></span></div>
+            <div class="mock-row"><span class="mock-chip"></span><span class="mock-k">Offers &amp; pricing<span class="mock-v">What you sell, and for how much</span></span></div>
+            <div class="mock-row"><span class="mock-chip"></span><span class="mock-k">Clients &amp; process<span class="mock-v">How the work actually runs</span></span></div>
+            <div class="mock-row"><span class="mock-chip"></span><span class="mock-k">Working instructions<span class="mock-v">The standards you hold</span></span></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="stage">
@@ -229,13 +276,38 @@ footer{background:var(--navy);padding:40px 48px;}
           <li>A customer-research and insight system</li>
         </ul>
         <p>We define what constitutes each system before the build begins, so the scope and intended outcome are clear.</p>
+        <div class="mock" style="margin-top:22px;max-width:440px;" aria-hidden="true">
+          <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-label">A workflow, automated</span></div>
+          <div class="mock-body">
+            <div class="mock-flow">
+              <div class="mock-step"><span class="mock-num">1</span><span class="mock-step-t">A discovery call is booked</span></div>
+              <div class="mock-arrow"></div>
+              <div class="mock-step"><span class="mock-num">2</span><span class="mock-step-t">Context is pulled from your AI brain</span></div>
+              <div class="mock-arrow"></div>
+              <div class="mock-step"><span class="mock-num">3</span><span class="mock-step-t">A prep brief is drafted in your voice</span></div>
+            </div>
+            <div class="mock-out">Ready for you to review &mdash; not to build from scratch</div>
+            <p class="mock-cap">Illustrative. Your systems get scoped to your business.</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="stage">
       <span class="stage-num">04</span>
-      <div>
-        <h3>Your Client Hub and Implementation Guides</h3>
-        <p>You'll receive a centralized hub containing session notes, decisions, recordings or recaps, and step-by-step instructions for every system we create &mdash; so nothing depends on memory and your team can adopt the work with you.</p>
+      <div class="stage-visual">
+        <div>
+          <h3>Your Client Hub and Implementation Guides</h3>
+          <p>You'll receive a centralized hub containing session notes, decisions, recordings or recaps, and step-by-step instructions for every system we create &mdash; so nothing depends on memory and your team can adopt the work with you.</p>
+        </div>
+        <div class="mock" aria-hidden="true">
+          <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-label">Your client hub</span></div>
+          <div class="mock-body">
+            <div class="mock-row"><span class="mock-chip"></span><span class="mock-k">Session notes<span class="mock-v">What we covered, what we decided</span></span></div>
+            <div class="mock-row"><span class="mock-chip"></span><span class="mock-k">Recordings &amp; recaps<span class="mock-v">Nothing depends on memory</span></span></div>
+            <div class="mock-row"><span class="mock-chip"></span><span class="mock-k">Step-by-step guides<span class="mock-v">One per system we build</span></span></div>
+            <div class="mock-row"><span class="mock-chip"></span><span class="mock-k">Your team can follow it<span class="mock-v">Without you in the room</span></span></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="stage">
@@ -263,7 +335,7 @@ footer{background:var(--navy);padding:40px 48px;}
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="section" style="background:var(--white);border-top:1px solid var(--rule);">
+<section class="section" style="background:var(--pink);border-top:1px solid var(--rule);">
   <p class="section-eyebrow">In Their Words</p>
   <h2 class="section-headline">What it's like to work with me.</h2>
   <div class="quotes">
@@ -280,7 +352,7 @@ footer{background:var(--navy);padding:40px 48px;}
 </section>
 
 <!-- HOW IT RUNS -->
-<section class="section" id="how" style="background:var(--off-white);border-top:1px solid var(--rule);">
+<section class="section" id="how" style="background:var(--sky);border-top:1px solid var(--rule-cool);">
   <p class="section-eyebrow">How It Runs</p>
   <h2 class="section-headline">How the Sprint works</h2>
   <p class="section-intro" style="margin-bottom:14px;">7 sessions: 6 private working sessions, 60 minutes each, completed within 8 weeks, plus a 30-minute implementation review approximately 30 days later.</p>
